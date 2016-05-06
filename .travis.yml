@@ -5,9 +5,9 @@ language: python
 
 env:
   global:
-    - REPOSITORY=https://pypi.p16n.org/simple/
-    - USERNAME=praekeltfoundation
-    - secure: gIwtErLvnLJjJsM6BBWi5G3vorM8WKCB03dTqovI663Kdw0UY/uscIt2zwELb7NDnFO7qxoUpk8ZlHOcbsg5Tn+C4Tn7qY/1s/MOEyI+JLB2+WnhXvUdHH8dizJJzi1lKVV2FVEjDJjZ+kwd1PWlxB0UdU+wIwOIlPfZeHgyrMIg/lLJEozNI1SuL3mvsjs5A4ZAyDmPFQB2Ec+rBknCzu5xjFEoz6EOdOC0KGLjYNeb+dcZAehEbd4BtLF8wJra3EMWUNIJcA0siOon23UcDfVYcTFfNnmaUcTsFBghVGUUsfyRKFubpSK7kimB9s55KUVjW2xkSIplosEzwKzfEPByiepy9DwTWG1QA8RIL2acrbACp25rcgJMtfH9i/uRwFfy2MPwa3rtNMdATLlKF3c+unP1PyoeL9DLKGsge9WecgUdp37C+GeddB+dS3nwMrs+b9Ck4p1y1B8pyMjmsy/VKYm/YyzIvxLRvtFYN/eCEojc56RIUbgkMKCppIlXzniW0U9e3mz67SiieMeP7qkiVvaz/JLYNOF6gHTyc6R8UkYU9sTRhbwpOKsreb3aQE8CoeNk4A7TdyZab2rIpo3pvJ9yJLCArdWfV/TvQoalMNr8hlYp00QLgJiIt5IHkVk6A9/9YaXixtuAm9mf500yPFKa+yj+UMb5kcH8Cpw=
+    - PYPI_REPO=debian-p16n
+    - PYPI_USER=praekeltfoundation
+    - secure: bziOJsCbC5+CoV2DJCC2i+KTbdqIY+hqrhI600ZQY6YTPVRRljK1PceEmqNPCI6YhmT7HKahhGZZMob37TcEkSqWRmqH7u9qVB0c8nkDaViRuhw182oA0gdyHqHMX4igcSr2KIKBqVdegFSN+yIUtroeMGKeu+s5Vs8Ifq/gJCEww2sliBdaQvxC1W2F8v6F99ZF4ujTUv8ROybPevCSblgDOOpZrVedQsZgPZr2aPFUFv4RNW6jlRyMhBiUtIa6dxbKV/miRTovMCvLsAmjXTPV3hrzbYh+DKvzcnSk2mxzJCUDWBgplqQkb2XcsvDO/VoEYDg4vos+/q95ZFqfklsDt3qyiL1cF9S1GNiUO5YgX6ldbQI1m8LjmnaZW44F1SsAj2HZCnvs+7rnkwYO4gP6L1VDqRQCDJ5U3frvEDosAg0xJcnPV3SdeEwhjoG/KLzRtUUYzQ917hfUHTENdAq48cHpfw+I1nDjf08ooI1V6DylzMVpkl72ImHBy+3Za+Xe39/fvl79etN6FdJMXu4L3tuUNUeD7236cAAlXMINfQssFfO/WNv/VhknuxS9IwFpr2k3ghW5WGa9NuWzv0M/KtbXUXVrK+Nsu0Y/mhuC8R61hgIHQB0pdRKDKpkdUr7erDJoWi9D6O9XhU9kjmUepSTE8UxB1dkN0OOzOtI=
   matrix:
     - DOCKER_IMAGE=python:2
 
@@ -21,6 +21,6 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: twine upload -r $REPOSITORY -u $USERNAME -p $PASSWORD wheelhouse/*
+  script: twine upload -r $PYPI_REPO -u $PYPI_USER -p $PYPI_PASS --skip-existing --config-file .pypirc wheelhouse/*
   on:
     branch: develop
