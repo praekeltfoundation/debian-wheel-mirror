@@ -21,6 +21,6 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: twine upload -r $PYPI_REPO -u $PYPI_USER -p $PYPI_PASS --config-file .pypirc wheelhouse/*
+  script: twine upload -r $PYPI_REPO -u $PYPI_USER -p $PYPI_PASS --skip-existing --config-file .pypirc wheelhouse/*
   on:
     branch: develop
