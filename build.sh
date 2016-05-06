@@ -22,9 +22,6 @@ while [[ $# > 0 ]]; do
         --deps)
             NO_DEPS=""
             ;;
-        --extra-runargs)
-            EXTRA_RUNARGS="$1"; shift
-            ;;
         *)
             # Unknown option
             echo "Unknown parameter: $key" 1>&2
@@ -37,4 +34,4 @@ docker run --rm \
   -v "$REQUIREMENT":/requirements.txt \
   -v "$WHEEL_DIR":/wheelhouse \
   $DOCKER_IMAGE \
-  pip wheel -r /requirements.txt -w /wheelhouse $NO_DEPS $EXTRA_RUNARGS
+  pip wheel -r /requirements.txt -w /wheelhouse $NO_DEPS
