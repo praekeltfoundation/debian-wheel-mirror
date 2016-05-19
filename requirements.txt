@@ -13,6 +13,6 @@ PyYAML==3.11
 rcssmin==1.0.6
 rjsmin==1.0.12
 simplejson==3.8.2
-Twisted==16.1.1
-uWSGI==2.0.13
+Twisted==16.2.0
+uWSGI==2.0.13.1
 zope.interface==4.1.3
