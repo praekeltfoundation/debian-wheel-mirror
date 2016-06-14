@@ -15,4 +15,3 @@ rjsmin==1.0.12
 simplejson==3.8.2
 Twisted==16.2.0
 uWSGI==2.0.13.1
-zope.interface==4.2.0
