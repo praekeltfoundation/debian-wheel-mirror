@@ -1,6 +1,6 @@
 billiard==3.3.0.23
 cairocffi==0.7.2
-cffi==1.6.0
+cffi==1.7.0
 cryptography==1.4
 gitdb==0.6.4
 MarkupSafe==0.23
