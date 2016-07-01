@@ -4,7 +4,7 @@ cffi==1.7.0
 cryptography==1.4
 gitdb==0.6.4
 MarkupSafe==0.23
-Pillow==3.2.0
+Pillow==3.3.0
 psycopg2==2.6.1
 psycopg2cffi==2.7.4
 pycrypto==2.6.1
