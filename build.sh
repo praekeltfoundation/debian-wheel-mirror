@@ -2,7 +2,7 @@
 set -e
 
 DOCKER_IMAGE="python:2"
-REQUIREMENT="$(pwd)/requirements.txt"
+REQUIREMENTS=("$(pwd)/requirements.txt")
 WHEEL_DIR="$(pwd)/wheelhouse"
 NO_DEPS="--no-deps"
 
@@ -14,7 +14,7 @@ while [[ $# > 0 ]]; do
             DOCKER_IMAGE="$1"; shift
             ;;
         -r|--requirement)
-            REQUIREMENT="$1"; shift
+            REQUIREMENTS+=("$1"); shift
             ;;
         -w|--wheel-dir)
             WHEEL_DIR="$1"; shift
@@ -30,10 +30,18 @@ while [[ $# > 0 ]]; do
     esac
 done
 
+REQUIREMENT_VOLUMES=()
+REQUIREMENT_COMMANDS=()
+for requirement in "${REQUIREMENTS[@]}"; do
+  requirement_file="$(basename $requirement)"
+  REQUIREMENT_VOLUMES+=("-v $requirement:/$requirement_file")
+  REQUIREMENT_COMMANDS+=("pip wheel -r /$requirement_file -w /wheelhouse $NO_DEPS")
+done
+
+IFS="&&" REQUIREMENT_COMMANDS="${REQUIREMENT_COMMANDS[@]}"
+
 docker run --rm \
-  -v "$REQUIREMENT":/requirements.txt \
+  ${REQUIREMENT_VOLUMES[@]} \
   -v "$WHEEL_DIR":/wheelhouse \
   $DOCKER_IMAGE \
-  /bin/sh -c \
-    "pip install --upgrade wheel && \
-     pip wheel -r /requirements.txt -w /wheelhouse $NO_DEPS"
+  /bin/sh -c "pip install --upgrade wheel && $REQUIREMENT_COMMANDS"
