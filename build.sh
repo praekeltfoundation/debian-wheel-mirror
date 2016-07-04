@@ -43,4 +43,4 @@ docker run --rm \
   -v "$WHEEL_DIR":/wheelhouse \
   $DOCKER_IMAGE \
   /bin/sh -c "pip install --upgrade wheel && \
-              pip install ${REQUIREMENT_OPTS[@]} -w /wheelhouse $NO_DEPS"
+              pip wheel ${REQUIREMENT_OPTS[*]} -w /wheelhouse $NO_DEPS"
