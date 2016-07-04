@@ -18,7 +18,7 @@ install:
   - docker pull $DOCKER_IMAGE
   - pip install twine
 script:
-  - REQUIREMENT_OPTS="-r $REQUIREMENT${EXTRA_REQUIREMENT:+ -r $EXTRA_REQUIREMENT}"
+  - REQUIREMENT_OPTS="-r $(pwd)/$REQUIREMENT${EXTRA_REQUIREMENT:+ -r $(pwd)/$EXTRA_REQUIREMENT}"
   - mkdir -p wheelhouse
   - ./build.sh -d $DOCKER_IMAGE $REQUIREMENT_OPTS
 
