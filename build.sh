@@ -41,7 +41,7 @@ done
 IFS="&&" REQUIREMENT_COMMANDS="${REQUIREMENT_COMMANDS[@]}"
 
 docker run --rm \
-  ${REQUIREMENT_VOLUMES[@]} \
+  "${REQUIREMENT_VOLUMES[@]}" \
   -v "$WHEEL_DIR":/wheelhouse \
   $DOCKER_IMAGE \
   /bin/sh -c "pip install --upgrade wheel && $REQUIREMENT_COMMANDS"
