@@ -34,4 +34,6 @@ docker run --rm \
   -v "$REQUIREMENT":/requirements.txt \
   -v "$WHEEL_DIR":/wheelhouse \
   $DOCKER_IMAGE \
-  pip wheel -r /requirements.txt -w /wheelhouse $NO_DEPS
+  /bin/sh -c \
+    "pip install --upgrade wheel && \
+     pip wheel -r /requirements.txt -w /wheelhouse $NO_DEPS"
