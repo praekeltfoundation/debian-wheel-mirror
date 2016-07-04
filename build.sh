@@ -2,7 +2,7 @@
 set -e
 
 DOCKER_IMAGE="python:2"
-REQUIREMENTS=("$(pwd)/requirements.txt")
+REQUIREMENTS=()
 WHEEL_DIR="$(pwd)/wheelhouse"
 NO_DEPS="--no-deps"
 
@@ -29,6 +29,10 @@ while [[ $# > 0 ]]; do
             ;;
     esac
 done
+
+if [[ -z "${REQUIREMENTS[@]}" ]]; then
+  REQUIREMENTS=("$(pwd)/requirements.txt")
+fi
 
 REQUIREMENT_VOLUMES=()
 REQUIREMENT_OPTS=()
