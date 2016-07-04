@@ -31,17 +31,16 @@ while [[ $# > 0 ]]; do
 done
 
 REQUIREMENT_VOLUMES=()
-REQUIREMENT_COMMANDS=()
+REQUIREMENT_OPTS=()
 for requirement in "${REQUIREMENTS[@]}"; do
   requirement_file="$(basename $requirement)"
-  REQUIREMENT_VOLUMES+=("-v $requirement:/$requirement_file")
-  REQUIREMENT_COMMANDS+=("pip wheel -r /$requirement_file -w /wheelhouse $NO_DEPS")
+  REQUIREMENT_VOLUMES+=("-v" "$requirement:/$requirement_file")
+  REQUIREMENT_OPTS+=("-r" "/$requirement_file")
 done
-
-IFS="&&" REQUIREMENT_COMMANDS="${REQUIREMENT_COMMANDS[@]}"
 
 docker run --rm \
   "${REQUIREMENT_VOLUMES[@]}" \
   -v "$WHEEL_DIR":/wheelhouse \
   $DOCKER_IMAGE \
-  /bin/sh -c "pip install --upgrade wheel && $REQUIREMENT_COMMANDS"
+  /bin/sh -c "pip install --upgrade wheel && \
+              pip install ${REQUIREMENT_OPTS[@]} -w /wheelhouse $NO_DEPS"
