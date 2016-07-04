@@ -42,7 +42,7 @@ for requirement in "${REQUIREMENTS[@]}"; do
   REQUIREMENT_OPTS+=("-r /$requirement_file")
 done
 
-docker run --rm \
+docker run --rm -it \
   "${REQUIREMENT_VOLUMES[@]}" \
   -v "$WHEEL_DIR":/wheelhouse \
   $DOCKER_IMAGE \
