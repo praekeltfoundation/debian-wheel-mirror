@@ -35,7 +35,7 @@ REQUIREMENT_OPTS=()
 for requirement in "${REQUIREMENTS[@]}"; do
   requirement_file="$(basename $requirement)"
   REQUIREMENT_VOLUMES+=("-v" "$requirement:/$requirement_file")
-  REQUIREMENT_OPTS+=("-r" "/$requirement_file")
+  REQUIREMENT_OPTS+=("-r /$requirement_file")
 done
 
 docker run --rm \
