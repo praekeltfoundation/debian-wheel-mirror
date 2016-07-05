@@ -42,9 +42,9 @@ for requirement in "${REQUIREMENTS[@]}"; do
   REQUIREMENT_OPTS+=("-r /$requirement_file")
 done
 
-docker run --rm -it \
+docker run --rm \
   "${REQUIREMENT_VOLUMES[@]}" \
   -v "$WHEEL_DIR":/wheelhouse \
   $DOCKER_IMAGE \
   /bin/sh -c "pip install --upgrade wheel && \
-              pip wheel ${REQUIREMENT_OPTS[*]} -w /wheelhouse $NO_DEPS"
+              exec pip wheel ${REQUIREMENT_OPTS[*]} -w /wheelhouse $NO_DEPS"
