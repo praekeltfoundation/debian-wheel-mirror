@@ -23,7 +23,8 @@ script:
   - ./build.sh -d $DOCKER_IMAGE $REQUIREMENT_OPTS
 
 before_deploy:
-  - pip install twine
+  # FIXME: Need to install clint: https://github.com/pypa/twine/issues/187
+  - pip install twine clint
 deploy:
   provider: script
   skip_cleanup: true
