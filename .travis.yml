@@ -5,22 +5,20 @@ language: python
 
 env:
   global:
-    - REQUIREMENT=requirements.txt
     - PYPI_REPO=debian-p16n
     - PYPI_USER=praekeltfoundation
     - secure: bziOJsCbC5+CoV2DJCC2i+KTbdqIY+hqrhI600ZQY6YTPVRRljK1PceEmqNPCI6YhmT7HKahhGZZMob37TcEkSqWRmqH7u9qVB0c8nkDaViRuhw182oA0gdyHqHMX4igcSr2KIKBqVdegFSN+yIUtroeMGKeu+s5Vs8Ifq/gJCEww2sliBdaQvxC1W2F8v6F99ZF4ujTUv8ROybPevCSblgDOOpZrVedQsZgPZr2aPFUFv4RNW6jlRyMhBiUtIa6dxbKV/miRTovMCvLsAmjXTPV3hrzbYh+DKvzcnSk2mxzJCUDWBgplqQkb2XcsvDO/VoEYDg4vos+/q95ZFqfklsDt3qyiL1cF9S1GNiUO5YgX6ldbQI1m8LjmnaZW44F1SsAj2HZCnvs+7rnkwYO4gP6L1VDqRQCDJ5U3frvEDosAg0xJcnPV3SdeEwhjoG/KLzRtUUYzQ917hfUHTENdAq48cHpfw+I1nDjf08ooI1V6DylzMVpkl72ImHBy+3Za+Xe39/fvl79etN6FdJMXu4L3tuUNUeD7236cAAlXMINfQssFfO/WNv/VhknuxS9IwFpr2k3ghW5WGa9NuWzv0M/KtbXUXVrK+Nsu0Y/mhuC8R61hgIHQB0pdRKDKpkdUr7erDJoWi9D6O9XhU9kjmUepSTE8UxB1dkN0OOzOtI=
   matrix:
-    - DOCKER_IMAGE=python:2.7.12 EXTRA_REQUIREMENT=requirements-cpython.txt # Debian/cPython 2.7
-    - DOCKER_IMAGE=python:3.5.2 EXTRA_REQUIREMENT=requirements-cpython.txt  # Debian/cPython 3.5
-    - DOCKER_IMAGE=pypy:2-5.3                                               # Debian/PyPy2
+    - DOCKER_IMAGE=python:2.7.12 # Debian/cPython 2.7
+    - DOCKER_IMAGE=python:3.5.2  # Debian/cPython 3.5
+    - DOCKER_IMAGE=pypy:2-5.3    # Debian/PyPy2
 
 install:
   - docker pull $DOCKER_IMAGE
 before_script:
-  - REQUIREMENT_OPTS="-r $(pwd)/$REQUIREMENT${EXTRA_REQUIREMENT:+ -r $(pwd)/$EXTRA_REQUIREMENT}"
   - mkdir -p wheelhouse
 script:
-  - ./build.sh -d $DOCKER_IMAGE $REQUIREMENT_OPTS
+  - ./build.sh -d $DOCKER_IMAGE
 
 before_deploy:
   - pip install twine
