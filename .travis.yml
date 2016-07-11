@@ -22,7 +22,7 @@ script:
   - ./build.sh -d $DOCKER_IMAGE
 
 before_deploy:
-  - pip install "twine>=1.7.1"
+  - pip install "twine>=1.7.3"
 deploy:
   provider: script
   skip_cleanup: true
