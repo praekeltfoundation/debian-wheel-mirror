@@ -13,6 +13,12 @@ env:
     - DOCKER_IMAGE=pypy:2-5.3.1                            PYPI_REPO=jessie   # Debian/PyPy2
     - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.12 PYPI_REPO=alpine-3 # Alpine/cPython 2.7
     - DOCKER_IMAGE=praekeltfoundation/alpine-python:3.5.2  PYPI_REPO=alpine-3 # Alpine/cPython 3.5
+matrix:
+  allow_failures:
+    # FIXME: uWSGI fails to build sometimes specifically on this platform
+    # https://github.com/unbit/uwsgi/issues/1318
+    # Ignore failures for now since the platform is rarely used
+    - env: DOCKER_IMAGE=praekeltfoundation/alpine-python:3.5.2  PYPI_REPO=alpine-3
 
 install:
   - docker pull $DOCKER_IMAGE
