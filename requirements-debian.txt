@@ -1,0 +1,4 @@
+# FIXME: uWSGI has trouble building under Alpine Linux. The difference between
+# Debian and Alpine cannot be determined using environment markers.
+# https://github.com/unbit/uwsgi/issues/1318
+uWSGI==2.0.13.1
