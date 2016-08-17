@@ -5,6 +5,7 @@ language: python
 
 env:
   global:
+    - REQUIREMENT=requirements.txt
     - PYPI_USER=praekeltorg
     - secure: "gLEWEL7aT013UJVn3zHaYD/IYVg+WhDaBMwi8mawk/nxtEsq+D4G6tHtRcWx51X3+RLvclF3joBbxRh4YuuMok2gJpTe28GHLGTUwqYHushgtDbXO5oX2xKiewMwgtsraJ6OmW2Efs569MlQKDt9JLZ1jtVm84Ams5O+UQIIWwpKYYPmZ0BGslEt/+cdDDR8HrBhC3P7I4BOwmma7O7dUk5sd0TR8skrwPg7QS7NAfU/p3y2pKJqwanduEQ003kcmIVR2nnzjsQkKICM7JJAzi7zRaAFsusipKxR9WYo/Zcw+YywTHzaJrKuObzEPpKjN16IMRj6qKmIwOlIy+YgOvBhFiziLxxhqy4A4Vb48zy8WOePU+i0jhjZfJ/Fbe3ubSektrNugLGbnn2SB/+EuJPM+Mz95mc2msEeRD9fd4bPECglbnOJuFGrBXqsQg8lDFqsC3D27ZclE4yKbhk8XyivyCOCfwVcW9lIuRtU3cO7/3Us5OLERbKnd/ELQhZPJu0lElNLD7O7kgiVBTFOpygqYdi8Lj1ZTrKvyFqtMCTqQuulvh2q9+3fBcAlM+Lll3k/t99gE30QBIlnAdij6PKx6NlqenGg2M4zkJSU0SydBu/2osGZVjXOgn2fqjWx7ZZJS32Xqm1mvVTr9DkK+irLt2QUsb/2jJVHk7RQ9GI="
   matrix:
