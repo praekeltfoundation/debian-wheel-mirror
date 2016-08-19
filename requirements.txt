@@ -12,6 +12,4 @@ rcssmin==1.0.6
 regex==2016.07.21
 rjsmin==1.0.12
 simplejson==3.8.2
-
-# Twisted doesn't require build tools to install under Python 3
-Twisted==16.3.2; python_version<'3'
+Twisted==16.3.2
