@@ -20,7 +20,7 @@ install:
 before_script:
   - mkdir -p wheelhouse
   - REQUIREMENTS=($REQUIREMENT $EXTRA_REQUIREMENT)
-  - for req in "${REQUIREMENTS[@]}"; do REQUIREMENT_OPTS+=(-r "$req"); done
+  - for req in "${REQUIREMENTS[@]}"; do REQUIREMENT_OPTS+=(-r "$(pwd)/$req"); done
 script:
   - ./build.sh -d $DOCKER_IMAGE "${REQUIREMENT_OPTS[@]}"
 
