@@ -20,9 +20,8 @@ install:
 before_script:
   - mkdir -p wheelhouse
   - REQUIREMENTS=($REQUIREMENT $EXTRA_REQUIREMENT)
-  - for req in "${REQUIREMENTS[@]}"; do REQUIREMENT_OPTS+=(-r "$(pwd)/$req"); done
 script:
-  - ./build.sh -d $DOCKER_IMAGE "${REQUIREMENT_OPTS[@]}"
+  - ./build.sh -d $DOCKER_IMAGE ${REQUIREMENTS[@]/#/-r }
 
 before_deploy:
   - pip install "twine>=1.7.3"
