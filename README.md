@@ -13,4 +13,4 @@ These packages are dependencies of software that we use or maintain. They have n
 
 The packages are built inside Docker containers and the wheels produced are only guaranteed to be compatible with Linux variety that they were built in. For some of these wheels, it may still be necessary to install runtime dependencies using the OS's native package manager. The specific Docker images that are used can be seen in the [Travis file](.travis.yml).
 
-The Python packages to build are all listed in the [`requirements.txt`](requirements.txt) file. We use Python's environment markers (see [PEP 496](https://www.python.org/dev/peps/pep-0496/)) to selectively build wheels for certain platforms.
+The Python packages to build are all listed in the [`requirements.txt`](requirements.txt) file. ~~We use Python's environment markers (see [PEP 496](https://www.python.org/dev/peps/pep-0496/)) to selectively build wheels for certain platforms~~ (see #26).
