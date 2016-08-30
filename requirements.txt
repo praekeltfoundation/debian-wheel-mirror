@@ -1,6 +1,6 @@
 cairocffi==0.7.2
 cffi==1.7.0
-cryptography==1.4
+cryptography==1.5
 gitdb==0.6.4
 MarkupSafe==0.23
 Pillow==3.3.1
@@ -12,11 +12,11 @@ psycopg2cffi==2.7.4
 
 pycrypto==2.6.1
 python_axolotl_curve25519==0.1
-PyYAML==3.11
+PyYAML==3.12
 rcssmin==1.0.6
-regex==2016.07.21
+regex==2016.08.27
 rjsmin==1.0.12
 simplejson==3.8.2
 
 # Twisted doesn't require build tools to install under Python 3
-Twisted==16.3.2; python_version<'3'
+Twisted==16.4.0; python_version<'3'
