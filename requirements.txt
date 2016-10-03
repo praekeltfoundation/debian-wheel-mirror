@@ -3,7 +3,7 @@ cffi==1.8.3
 cryptography==1.5.2
 gitdb==0.6.4
 MarkupSafe==0.23
-Pillow==3.3.1
+Pillow==3.4.0
 psutil==4.3.1
 
 # psycopg2 is not compatible with PyPy, use psycopg2cffi rather
