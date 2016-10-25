@@ -4,7 +4,7 @@ cryptography==1.5.2
 gitdb==0.6.4
 MarkupSafe==0.23
 Pillow==3.4.2
-psutil==4.4.0
+psutil==4.4.1
 
 # psycopg2 is not compatible with PyPy, use psycopg2cffi rather
 psycopg2==2.6.2; platform_python_implementation=='CPython'
