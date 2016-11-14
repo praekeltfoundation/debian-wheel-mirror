@@ -6,12 +6,12 @@ language: python
 env:
   global:
     - REQUIREMENT=requirements.txt
-    - PYPI_USER=praekeltorg
-    - secure: "gLEWEL7aT013UJVn3zHaYD/IYVg+WhDaBMwi8mawk/nxtEsq+D4G6tHtRcWx51X3+RLvclF3joBbxRh4YuuMok2gJpTe28GHLGTUwqYHushgtDbXO5oX2xKiewMwgtsraJ6OmW2Efs569MlQKDt9JLZ1jtVm84Ams5O+UQIIWwpKYYPmZ0BGslEt/+cdDDR8HrBhC3P7I4BOwmma7O7dUk5sd0TR8skrwPg7QS7NAfU/p3y2pKJqwanduEQ003kcmIVR2nnzjsQkKICM7JJAzi7zRaAFsusipKxR9WYo/Zcw+YywTHzaJrKuObzEPpKjN16IMRj6qKmIwOlIy+YgOvBhFiziLxxhqy4A4Vb48zy8WOePU+i0jhjZfJ/Fbe3ubSektrNugLGbnn2SB/+EuJPM+Mz95mc2msEeRD9fd4bPECglbnOJuFGrBXqsQg8lDFqsC3D27ZclE4yKbhk8XyivyCOCfwVcW9lIuRtU3cO7/3Us5OLERbKnd/ELQhZPJu0lElNLD7O7kgiVBTFOpygqYdi8Lj1ZTrKvyFqtMCTqQuulvh2q9+3fBcAlM+Lll3k/t99gE30QBIlnAdij6PKx6NlqenGg2M4zkJSU0SydBu/2osGZVjXOgn2fqjWx7ZZJS32Xqm1mvVTr9DkK+irLt2QUsb/2jJVHk7RQ9GI="
+    - TWINE_USERNAME=praekeltorg
+    - secure: "mkYj3fOKFymdaO2x29gFbvId1wwo3HV3+8cCCgneZXwvlRThfGjIMFSYGJAcLXsX5cudV0jvgbICGP7vZgmbEBiTFJreimO+19TLVzzgx54lR1dNkYQbVWxlUZqlI+uSW0KV6L1jj8UAIEEMOHe8zduhKqom7BkLhoAJNPIzaBxoB+unvzwqDYokzqroSLBljeqfYnRcLTdt7kM2UHrgA3Pnl5CyRSWBCUsWPbC8JE2IrXMkCxo26cDbNOb7eFIP7OP3qhH/UH5igp5X/2kHwc3xRTLAbycsd511vCHzgGfQreFcmbAljXzX0oAiuN/EJgiNhvqGTT7Kev9gB0fr0ZlaZEMhSA2fabvYgQpd0cg765KsDnCTFzTY5FZ+rRNJ5FWlHtuIGXnKPQtnq6kth7nXqmVu25FGEJnSwJgq7uugWWCr5sUFN1OHjINDvrabKbJGgLp+R93hwrnX+TsJowvB389fSEbVYq+vg/9UA9GyWV8d0YJL7ljnUX81yB+jsm2Lk+ndo8wSnqdE127nE8wYB1stdowmoHWvN1GgltG5A2KC1oDlv/7Ga1RdTQW1lMjA9z19FY4EtpnoSDgGZbK8Pztq+F/cTCO1JyzguNagrbzec6R2kxHJKn3A1ZfvnHQCgmiD113l5xnw9K8QHqhGZcScxIhsNl6CkG6mBp8="
   matrix:
     - DOCKER_IMAGE=python:2.7.12                           PYPI_REPO=jessie   EXTRA_REQUIREMENT=requirements-debian.txt # Debian/cPython 2.7
     - DOCKER_IMAGE=python:3.5.2                            PYPI_REPO=jessie   EXTRA_REQUIREMENT=requirements-debian.txt # Debian/cPython 3.5
-    - DOCKER_IMAGE=pypy:2-5.4.0                            PYPI_REPO=jessie   EXTRA_REQUIREMENT=requirements-debian.txt # Debian/PyPy2
+    - DOCKER_IMAGE=pypy:2-5.4.1                            PYPI_REPO=jessie   EXTRA_REQUIREMENT=requirements-debian.txt # Debian/PyPy2
     - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.12 PYPI_REPO=alpine-3 # Alpine/cPython 2.7
     - DOCKER_IMAGE=praekeltfoundation/alpine-python:3.5.2  PYPI_REPO=alpine-3 # Alpine/cPython 3.5
 
@@ -24,10 +24,10 @@ script:
   - ./build.sh -d $DOCKER_IMAGE $REQUIREMENT_OPTS
 
 before_deploy:
-  - pip install "twine>=1.7.3"
+  - pip install 'twine>=1.8.0'
 deploy:
   provider: script
   skip_cleanup: true
-  script: twine upload -r "$PYPI_REPO" -u "$PYPI_USER" -p "$PYPI_PASS" --skip-existing --config-file .pypirc wheelhouse/*
+  script: twine upload -r "$PYPI_REPO" --skip-existing --config-file .pypirc wheelhouse/*
   on:
     branch: develop
