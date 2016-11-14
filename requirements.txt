@@ -1,22 +1,22 @@
 cairocffi==0.7.2
-cffi==1.8.3
-cryptography==1.5.2
+cffi==1.9.1
+cryptography==1.5.3
 gitdb==0.6.4
 MarkupSafe==0.23
-Pillow==3.4.1
+Pillow==3.4.2
 
 # psycopg2 is not compatible with PyPy, use psycopg2cffi rather
 psycopg2==2.6.2; platform_python_implementation=='CPython'
-psycopg2cffi==2.7.4
+psycopg2cffi==2.7.5
 
 pycrypto==2.6.1
 python_axolotl_curve25519==0.1
 PyYAML==3.12
 rcssmin==1.0.6
-regex==2016.09.22
+regex==2016.10.22
 rjsmin==1.0.12
-simplejson==3.8.2
+simplejson==3.10.0
 subprocess32==3.2.7; python_version<'3'
 
 # Twisted doesn't require build tools to install under Python 3
-Twisted==16.4.1; python_version<'3'
+Twisted==16.5.0; python_version<'3'
