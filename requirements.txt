@@ -13,7 +13,7 @@ pycrypto==2.6.1
 python_axolotl_curve25519==0.1
 PyYAML==3.12
 rcssmin==1.0.6
-regex==2016.10.22
+regex==2016.11.18
 rjsmin==1.0.12
 simplejson==3.10.0
 subprocess32==3.2.7; python_version<'3'
