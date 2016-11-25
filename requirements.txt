@@ -17,4 +17,4 @@ regex==2016.11.21
 rjsmin==1.0.12
 simplejson==3.10.0
 subprocess32==3.2.7; python_version<'3'
-Twisted==16.5.0
+Twisted==16.6.0
