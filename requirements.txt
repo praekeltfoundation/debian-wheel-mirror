@@ -1,6 +1,6 @@
 cairocffi==0.7.2
 cffi==1.9.1
-cryptography==1.7.1
+cryptography==1.7.2
 gitdb==0.6.4
 MarkupSafe==0.23
 Pillow==4.0.0
