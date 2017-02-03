@@ -1,4 +1,4 @@
-cairocffi==0.7.2
+cairocffi==0.8.0
 cffi==1.9.1
 cryptography==1.7.2
 gitdb==0.6.4
