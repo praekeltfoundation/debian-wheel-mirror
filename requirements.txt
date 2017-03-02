@@ -1,14 +1,10 @@
 cairocffi==0.8.0
 cryptography==1.7.2
-gitdb==0.6.4
-MarkupSafe==0.23
 psycopg2cffi==2.7.5
 pycrypto==2.6.1
 python_axolotl_curve25519==0.1
-PyYAML==3.12
 rcssmin==1.0.6
 regex==2017.02.08
 rjsmin==1.0.12
-simplejson==3.10.0
 subprocess32==3.2.7; python_version<'3'
 Twisted==17.1.0
