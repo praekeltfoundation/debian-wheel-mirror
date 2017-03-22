@@ -12,7 +12,7 @@ env:
     - DOCKER_IMAGE=python:2.7.13                           PYPI_REPO=jessie   EXTRA_REQUIREMENT=requirements-debian.txt # Debian/cPython 2.7
     - DOCKER_IMAGE=python:3.6.0                            PYPI_REPO=jessie   EXTRA_REQUIREMENT=requirements-debian.txt # Debian/cPython 3.5
     - DOCKER_IMAGE=pypy:2-5.6.0                            PYPI_REPO=jessie   EXTRA_REQUIREMENT=requirements-debian.txt # Debian/PyPy2
-    - DOCKER_IMAGE=pypy:3-5.5.0-alpha                      PYPI_REPO=jessie   EXTRA_REQUIREMENT=requirements-debian.txt # Debian/PyPy3
+    - DOCKER_IMAGE=pypy:3-5.7.0                            PYPI_REPO=jessie   EXTRA_REQUIREMENT=requirements-debian.txt # Debian/PyPy3
     - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.13 PYPI_REPO=alpine-3 EXTRA_REQUIREMENT=requirements-alpine.txt # Alpine/cPython 2.7
     - DOCKER_IMAGE=praekeltfoundation/alpine-python:3.6.0  PYPI_REPO=alpine-3 EXTRA_REQUIREMENT=requirements-alpine.txt # Alpine/cPython 3.5
 
