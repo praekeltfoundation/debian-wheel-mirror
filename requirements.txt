@@ -4,7 +4,7 @@ psycopg2cffi==2.7.5
 pycrypto==2.6.1
 python_axolotl_curve25519==0.1
 rcssmin==1.0.6
-regex==2017.02.08
+regex==2017.04.05
 rjsmin==1.0.12
 subprocess32==3.2.7; python_version<'3'
 Twisted==17.1.0
