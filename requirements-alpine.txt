@@ -3,3 +3,4 @@
 cffi==1.10.0
 Pillow==4.1.0
 psycopg2==2.7.1
+numpy==1.8.1
