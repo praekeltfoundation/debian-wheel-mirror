@@ -5,7 +5,7 @@
 
 Automated Python wheel building and deployment for Praekelt's PyPi mirrors.
 
-This repository contains a list of Python packages that we build into wheels and upload to our PyPi mirror. These wheels are used in our base Python Docker images:  [`praekeltfoundation/dockerfiles`](https://github.com/praekeltfoundation/dockerfiles).
+This repository contains a list of Python packages that we build into wheels and upload to our PyPi mirror. These wheels are used in our base Python Docker images:  [`praekeltfoundation/docker-py-base`](https://github.com/praekeltfoundation/docker-py-base).
 
 The packages are kept up-to-date by automated pull requests made by [pyup.io](https://pyup.io/repos/github/praekeltfoundation/debian-wheel-mirror/). Packages are built inside Docker containers and uploaded to our PyPi mirror by [Travis CI](https://travis-ci.org/praekeltfoundation/debian-wheel-mirror).
 
