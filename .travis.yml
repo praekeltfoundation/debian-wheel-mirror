@@ -2,6 +2,9 @@ sudo: required
 services:
   - docker
 language: python
+cache:
+  directories:
+    - "$HOME"/wheelhouse
 
 env:
   global:
@@ -19,10 +22,10 @@ env:
 install:
   - docker pull $DOCKER_IMAGE
 before_script:
-  - mkdir -p wheelhouse
+  - mkdir -p "$HOME"/wheelhouse
   - REQUIREMENT_OPTS="-r $(pwd)/$REQUIREMENT${EXTRA_REQUIREMENT:+ -r $(pwd)/$EXTRA_REQUIREMENT}"
 script:
-  - ./build.sh -d $DOCKER_IMAGE $REQUIREMENT_OPTS
+  - ./build.sh --wheel-dir "$HOME"/wheelhouse -d $DOCKER_IMAGE $REQUIREMENT_OPTS
 
 before_deploy:
   - pip install 'twine>=1.8.0'
