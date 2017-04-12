@@ -3,7 +3,7 @@ services:
   - docker
 language: python
 cache:
-  directories:
+  - directories:
     - "$HOME"/wheelhouse
 
 env:
