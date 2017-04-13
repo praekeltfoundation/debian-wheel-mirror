@@ -12,12 +12,12 @@ env:
     - TWINE_USERNAME=praekeltorg
     - secure: "mkYj3fOKFymdaO2x29gFbvId1wwo3HV3+8cCCgneZXwvlRThfGjIMFSYGJAcLXsX5cudV0jvgbICGP7vZgmbEBiTFJreimO+19TLVzzgx54lR1dNkYQbVWxlUZqlI+uSW0KV6L1jj8UAIEEMOHe8zduhKqom7BkLhoAJNPIzaBxoB+unvzwqDYokzqroSLBljeqfYnRcLTdt7kM2UHrgA3Pnl5CyRSWBCUsWPbC8JE2IrXMkCxo26cDbNOb7eFIP7OP3qhH/UH5igp5X/2kHwc3xRTLAbycsd511vCHzgGfQreFcmbAljXzX0oAiuN/EJgiNhvqGTT7Kev9gB0fr0ZlaZEMhSA2fabvYgQpd0cg765KsDnCTFzTY5FZ+rRNJ5FWlHtuIGXnKPQtnq6kth7nXqmVu25FGEJnSwJgq7uugWWCr5sUFN1OHjINDvrabKbJGgLp+R93hwrnX+TsJowvB389fSEbVYq+vg/9UA9GyWV8d0YJL7ljnUX81yB+jsm2Lk+ndo8wSnqdE127nE8wYB1stdowmoHWvN1GgltG5A2KC1oDlv/7Ga1RdTQW1lMjA9z19FY4EtpnoSDgGZbK8Pztq+F/cTCO1JyzguNagrbzec6R2kxHJKn3A1ZfvnHQCgmiD113l5xnw9K8QHqhGZcScxIhsNl6CkG6mBp8="
   matrix:
-    - DOCKER_IMAGE=python:2.7.13                           PYPI_REPO=jessie   EXTRA_REQUIREMENT=requirements-debian.txt # Debian/cPython 2.7
-    - DOCKER_IMAGE=python:3.6.1                            PYPI_REPO=jessie   EXTRA_REQUIREMENT=requirements-debian.txt # Debian/cPython 3.6
-    - DOCKER_IMAGE=pypy:2-5.7.1                            PYPI_REPO=jessie   EXTRA_REQUIREMENT=requirements-debian.txt # Debian/PyPy2
-    - DOCKER_IMAGE=pypy:3-5.7.1                            PYPI_REPO=jessie   EXTRA_REQUIREMENT=requirements-debian.txt # Debian/PyPy3
-    - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.13 PYPI_REPO=alpine-3 EXTRA_REQUIREMENT=requirements-alpine.txt # Alpine/cPython 2.7
-    - DOCKER_IMAGE=praekeltfoundation/alpine-python:3.6.1  PYPI_REPO=alpine-3 EXTRA_REQUIREMENT=requirements-alpine.txt # Alpine/cPython 3.6
+    - DOCKER_IMAGE=python:2.7.13                           PYPI_REPO=jessie     EXTRA_REQUIREMENT=requirements-debian.txt # Debian/cPython 2.7
+    - DOCKER_IMAGE=python:3.6.1                            PYPI_REPO=jessie     EXTRA_REQUIREMENT=requirements-debian.txt # Debian/cPython 3.6
+    - DOCKER_IMAGE=pypy:2-5.7.1                            PYPI_REPO=jessie     EXTRA_REQUIREMENT=requirements-debian.txt # Debian/PyPy2
+    - DOCKER_IMAGE=pypy:3-5.7.1                            PYPI_REPO=jessie     EXTRA_REQUIREMENT=requirements-debian.txt # Debian/PyPy3
+    - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.13 PYPI_REPO=alpine-3.4 EXTRA_REQUIREMENT=requirements-alpine.txt # Alpine/cPython 2.7
+    - DOCKER_IMAGE=praekeltfoundation/alpine-python:3.6.1  PYPI_REPO=alpine-3.4 EXTRA_REQUIREMENT=requirements-alpine.txt # Alpine/cPython 3.6
 
 install:
   - docker pull $DOCKER_IMAGE
