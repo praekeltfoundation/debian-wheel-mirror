@@ -1,6 +1,6 @@
 # These packages all have pre-compiled manylinux builds for Debian now, so we
 # only need to build them on Alpine
 cffi==1.10.0
-Pillow==4.1.0
+Pillow==4.1.1
 psycopg2==2.7.1
 numpy==1.12.1
