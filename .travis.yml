@@ -16,43 +16,43 @@ matrix:
     # Debian/cPython 2.7
     - env:
       - DOCKER_IMAGE=python:2.7.13
-      - PYPI_REPO=jessie
       - EXTRA_REQUIREMENT=requirements-debian.txt
+      - PYPI_REPO=jessie
     # Debian/cPython 3.6
     - env:
       - DOCKER_IMAGE=python:3.6.1
-      - PYPI_REPO=jessie
       - EXTRA_REQUIREMENT=requirements-debian.txt
+      - PYPI_REPO=jessie
     # Debian/PyPy2
     - env:
       - DOCKER_IMAGE=pypy:2-5.8.0
-      - PYPI_REPO=jessie
       - EXTRA_REQUIREMENT=requirements-debian.txt
+      - PYPI_REPO=jessie
     # Debian/PyPy3
     - env:
       - DOCKER_IMAGE=pypy:3-5.8.0
-      - PYPI_REPO=jessie
       - EXTRA_REQUIREMENT=requirements-debian.txt
+      - PYPI_REPO=jessie
     # Alpine 3.4/cPython 2.7
     - env:
       - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.13
-      - PYPI_REPO=alpine-3.4
       - EXTRA_REQUIREMENT=requirements-alpine.txt
+      - PYPI_REPO=alpine-3.4
     # Alpine 3.4/cPython 3.6
     - env:
       - DOCKER_IMAGE=praekeltfoundation/alpine-python:3.6.1
-      - PYPI_REPO=alpine-3.4
       - EXTRA_REQUIREMENT=requirements-alpine.txt
+      - PYPI_REPO=alpine-3.4
     # Alpine 3.6/cPython 2.7
     - env:
       - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.13-alpine3.6
-      - PYPI_REPO=alpine-3.6
       - EXTRA_REQUIREMENT=requirements-alpine.txt
+      - PYPI_REPO=alpine-3.6
     # Alpine 3.6/cPython 3.6
     - env:
       - DOCKER_IMAGE=praekeltfoundation/alpine-python:3.6.1-alpine3.6
-      - PYPI_REPO=alpine-3.6
       - EXTRA_REQUIREMENT=requirements-alpine.txt
+      - PYPI_REPO=alpine-3.6
 
 install:
   - docker pull $DOCKER_IMAGE
