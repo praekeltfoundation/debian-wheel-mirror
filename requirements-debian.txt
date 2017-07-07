@@ -5,5 +5,5 @@ uWSGI==2.0.15
 
 # These have pre-compiled manylinux packages on CPython but not on PyPy
 cffi==1.10.0; platform_python_implementation!='CPython'
-Pillow==4.2.0; platform_python_implementation!='CPython'
+Pillow==4.2.1; platform_python_implementation!='CPython'
 # pyscopg2 is not compatible with PyPy
