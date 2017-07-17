@@ -1,5 +1,5 @@
 cairocffi==0.8.0
-cryptography==1.9
+cryptography==2.0
 psycopg2cffi==2.7.5
 pycrypto==2.6.1
 python_axolotl_curve25519==0.1
