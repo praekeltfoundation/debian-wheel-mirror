@@ -1,6 +1,5 @@
 cairocffi==0.8.0
 hiredis==0.2.0
-lxml==3.8.0
 psycopg2cffi==2.7.6
 pycrypto==2.6.1
 python_axolotl_curve25519==0.1
