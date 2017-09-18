@@ -2,7 +2,7 @@
 # only need to build them on Alpine
 cffi==1.11.0
 cryptography==2.0.3
-lxml==3.8.0
+lxml==4.0.0
 Pillow==4.2.1
 psycopg2==2.7.3.1
 numpy==1.13.1

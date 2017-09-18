@@ -8,4 +8,4 @@ cffi==1.11.0; platform_python_implementation!='CPython'
 cryptography==2.0.3; platform_python_implementation!='CPython'
 Pillow==4.2.1; platform_python_implementation!='CPython'
 # pyscopg2 is not compatible with PyPy
-lxml==3.8.0; platform_python_implementation!='CPython'
+lxml==4.0.0; platform_python_implementation!='CPython'
