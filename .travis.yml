@@ -7,6 +7,12 @@ cache:
   directories:
   - wheelhouse
 
+# Only build develop & master. PRs still get built.
+branches:
+  only:
+    - develop
+    - master
+
 env:
   global:
     - REQUIREMENT=requirements.txt
