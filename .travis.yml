@@ -7,6 +7,12 @@ cache:
   directories:
   - wheelhouse
 
+# Only build develop & master. PRs still get built.
+branches:
+  only:
+    - develop
+    - master
+
 env:
   global:
     - REQUIREMENT=requirements.txt
@@ -16,7 +22,7 @@ matrix:
   include:
     # Debian/cPython 2.7
     - env:
-      - DOCKER_IMAGE=python:2.7.13
+      - DOCKER_IMAGE=python:2.7.14
       - EXTRA_REQUIREMENT=requirements-debian.txt
       - PYPI_REPO=jessie
     # Debian/cPython 3.6
@@ -36,7 +42,7 @@ matrix:
       - PYPI_REPO=jessie
     # Alpine 3.4/cPython 2.7
     - env:
-      - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.13
+      - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.14
       - EXTRA_REQUIREMENT=requirements-alpine.txt
       - PYPI_REPO=alpine-3.4
     # Alpine 3.4/cPython 3.6
@@ -46,7 +52,7 @@ matrix:
       - PYPI_REPO=alpine-3.4
     # Alpine 3.6/cPython 2.7
     - env:
-      - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.13-alpine3.6
+      - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.14-alpine3.6
       - EXTRA_REQUIREMENT=requirements-alpine.txt
       - PYPI_REPO=alpine-3.6
     # Alpine 3.6/cPython 3.6
