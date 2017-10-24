@@ -42,12 +42,12 @@ matrix:
       - PYPI_REPO=stretch
     # Debian Jessie/PyPy2
     - env:
-      - DOCKER_IMAGE=pypy:2-5.8.0
+      - DOCKER_IMAGE=pypy:2-5.9.0
       - EXTRA_REQUIREMENT=requirements-debian.txt
       - PYPI_REPO=jessie
     # Debian Jessie/PyPy3
     - env:
-      - DOCKER_IMAGE=pypy:3-5.8.0
+      - DOCKER_IMAGE=pypy:3-5.9.0
       - EXTRA_REQUIREMENT=requirements-debian.txt
       - PYPI_REPO=jessie
     # Alpine 3.4/cPython 2.7
