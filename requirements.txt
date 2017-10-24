@@ -1,11 +1,12 @@
 cairocffi==0.8.0
-psycopg2cffi==2.7.5
+hiredis==0.2.0
+psycopg2cffi==2.7.6
 pycrypto==2.6.1
 python_axolotl_curve25519==0.1
 rcssmin==1.0.6
-regex==2017.07.11
+regex==2017.09.23
 rjsmin==1.0.12
 subprocess32==3.2.7; python_version<'3'
 thriftpy==0.3.9
-Twisted==17.5.0
+Twisted==17.9.0
 ujson==1.35; platform_python_implementation=='CPython'
