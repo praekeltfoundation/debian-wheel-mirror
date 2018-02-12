@@ -4,5 +4,4 @@ cffi==1.11.4
 cryptography==2.1.4
 lxml==4.1.1
 Pillow==5.0.0
-psycopg2==2.7.4
 numpy==1.14.0
