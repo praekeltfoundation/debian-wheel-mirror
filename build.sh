@@ -5,7 +5,6 @@ DOCKER_IMAGE="python:2"
 REQUIREMENTS=()
 WHEEL_DIR="$(pwd)/wheelhouse"
 NO_DEPS="--no-deps"
-NO_BINARIES="--no-binary :all:"
 
 while [[ $# > 0 ]]; do
     key="$1"; shift
@@ -22,9 +21,6 @@ while [[ $# > 0 ]]; do
             ;;
         --deps)
             NO_DEPS=""
-            ;;
-        --binaries)
-            NO_BINARIES=""
             ;;
         *)
             # Unknown option
@@ -50,4 +46,4 @@ docker run --rm \
   "${REQUIREMENT_VOLUMES[@]}" \
   -v "$WHEEL_DIR":/wheelhouse \
   $DOCKER_IMAGE \
-  pip wheel "${REQUIREMENT_OPTS[@]}" -w /wheelhouse -f /wheelhouse $NO_DEPS $NO_BINARIES
+  pip wheel "${REQUIREMENT_OPTS[@]}" -w /wheelhouse -f /wheelhouse $NO_DEPS
