@@ -50,16 +50,6 @@ matrix:
       - DOCKER_IMAGE=pypy:3-5.10.1
       - EXTRA_REQUIREMENT=requirements-debian.txt
       - PYPI_REPO=jessie
-    # Alpine 3.4/cPython 2.7
-    - env:
-      - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.14
-      - EXTRA_REQUIREMENT=requirements-alpine.txt
-      - PYPI_REPO=alpine-3.4
-    # Alpine 3.4/cPython 3.6
-    - env:
-      - DOCKER_IMAGE=praekeltfoundation/alpine-python:3.6.4
-      - EXTRA_REQUIREMENT=requirements-alpine.txt
-      - PYPI_REPO=alpine-3.4
     # Alpine 3.6/cPython 2.7
     - env:
       - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.14-alpine3.6
