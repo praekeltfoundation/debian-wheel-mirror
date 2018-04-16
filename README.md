@@ -1,7 +1,6 @@
 # debian-wheel-mirror
 
 [![Build Status](https://travis-ci.org/praekeltfoundation/debian-wheel-mirror.svg?branch=develop)](https://travis-ci.org/praekeltfoundation/debian-wheel-mirror)
-[![Updates](https://pyup.io/repos/github/praekeltfoundation/debian-wheel-mirror/shield.svg)](https://pyup.io/repos/github/praekeltfoundation/debian-wheel-mirror/)
 
 Automated Python wheel building and deployment for Praekelt's PyPI mirrors.
 
