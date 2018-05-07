@@ -22,7 +22,7 @@ matrix:
   include:
     # Debian Jessie/cPython 2.7
     - env:
-      - DOCKER_IMAGE=python:2.7.14-jessie
+      - DOCKER_IMAGE=python:2.7.15-jessie
       - EXTRA_REQUIREMENT=requirements-debian.txt
       - PYPI_REPO=jessie
     # Debian Jessie/cPython 3.6
@@ -32,7 +32,7 @@ matrix:
       - PYPI_REPO=jessie
     # Debian Stretch/cPython 2.7
     - env:
-      - DOCKER_IMAGE=python:2.7.14-stretch
+      - DOCKER_IMAGE=python:2.7.15-stretch
       - EXTRA_REQUIREMENT=requirements-debian.txt
       - PYPI_REPO=stretch
     # Debian Stretch/cPython 3.6
@@ -42,27 +42,17 @@ matrix:
       - PYPI_REPO=stretch
     # Debian Jessie/PyPy2
     - env:
-      - DOCKER_IMAGE=pypy:2-5.10.0
+      - DOCKER_IMAGE=pypy:2-6.0.0
       - EXTRA_REQUIREMENT=requirements-debian.txt
       - PYPI_REPO=jessie
     # Debian Jessie/PyPy3
     - env:
-      - DOCKER_IMAGE=pypy:3-5.10.1
+      - DOCKER_IMAGE=pypy:3-6.0.0
       - EXTRA_REQUIREMENT=requirements-debian.txt
       - PYPI_REPO=jessie
-    # Alpine 3.6/cPython 2.7
-    - env:
-      - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.14-alpine3.6
-      - EXTRA_REQUIREMENT=requirements-alpine.txt
-      - PYPI_REPO=alpine-3.6
-    # Alpine 3.6/cPython 3.6
-    - env:
-      - DOCKER_IMAGE=praekeltfoundation/alpine-python:3.6.5-alpine3.6
-      - EXTRA_REQUIREMENT=requirements-alpine.txt
-      - PYPI_REPO=alpine-3.6
     # Alpine 3.7/cPython 2.7
     - env:
-      - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.14-alpine3.7
+      - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.15-alpine3.7
       - EXTRA_REQUIREMENT=requirements-alpine.txt
       - PYPI_REPO=alpine-3.7
     # Alpine 3.7/cPython 3.6
