@@ -11,5 +11,5 @@ rjsmin==1.0.12
 subprocess32==3.5.2; python_version<'3'
 # https://github.com/eleme/thriftpy/issues/333
 thriftpy==0.3.9; python_version<'3.7'
-Twisted==18.4.0
+Twisted==18.7.0
 ujson==1.35; platform_python_implementation=='CPython'
