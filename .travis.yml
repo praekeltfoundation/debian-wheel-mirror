@@ -55,16 +55,21 @@ matrix:
       - DOCKER_IMAGE=pypy:3-6.0.0
       - EXTRA_REQUIREMENT=requirements-debian.txt
       - PYPI_REPO=jessie
-    # Alpine 3.7/cPython 2.7
+    # Alpine 3.8/cPython 2.7
     - env:
-      - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.15-alpine3.7
+      - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7.15-alpine3.8
       - EXTRA_REQUIREMENT=requirements-alpine.txt
-      - PYPI_REPO=alpine-3.7
-    # Alpine 3.7/cPython 3.6
+      - PYPI_REPO=alpine-3.8
+    # Alpine 3.8/cPython 3.6
     - env:
-      - DOCKER_IMAGE=praekeltfoundation/alpine-python:3.6.6-alpine3.7
+      - DOCKER_IMAGE=praekeltfoundation/alpine-python:3.6.6-alpine3.8
       - EXTRA_REQUIREMENT=requirements-alpine.txt
-      - PYPI_REPO=alpine-3.7
+      - PYPI_REPO=alpine-3.8
+    # Alpine 3.8/cPython 3.7
+    - env:
+      - DOCKER_IMAGE=praekeltfoundation/alpine-python:3.7.0-alpine3.8
+      - EXTRA_REQUIREMENT=requirements-alpine.txt
+      - PYPI_REPO=alpine-3.8
 
 install:
   - docker pull $DOCKER_IMAGE
