@@ -6,7 +6,7 @@ psycopg2==2.7.5; platform_python_implementation=='CPython'
 psycopg2cffi==2.8.1
 python_axolotl_curve25519==0.4.1.post2
 rcssmin==1.0.6
-regex==2018.07.11
+regex==2018.08.17
 rjsmin==1.0.12
 subprocess32==3.5.2; python_version<'3'
 # https://github.com/eleme/thriftpy/issues/333
