@@ -4,4 +4,4 @@ cffi==1.11.5
 cryptography==2.5
 lxml==4.3.0
 Pillow==5.4.1
-numpy==1.16.0
+numpy==1.16.1
