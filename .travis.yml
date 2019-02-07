@@ -1,11 +1,9 @@
-sudo: required
-dist: trusty
-services:
-  - docker
+dist: xenial
+services: docker
 language: python
 cache:
   directories:
-  - wheelhouse
+    - wheelhouse
 
 # Only build develop & master. PRs still get built.
 branches:
