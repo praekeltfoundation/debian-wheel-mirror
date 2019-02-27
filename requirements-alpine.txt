@@ -1,7 +1,7 @@
 # These packages all have pre-compiled manylinux builds for Debian now, so we
 # only need to build them on Alpine
 cffi==1.12.2
-cryptography==2.6
+cryptography==2.6.1
 lxml==4.3.1
 Pillow==5.4.1
 numpy==1.16.2
