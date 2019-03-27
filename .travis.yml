@@ -21,41 +21,22 @@ matrix:
     # Debian Stretch/cPython 2.7
     - env:
       - DOCKER_IMAGE=python:2.7-stretch
-      - EXTRA_REQUIREMENT=requirements-debian.txt
       - PYPI_REPO=stretch
     # Debian Stretch/cPython 3.6
     - env:
       - DOCKER_IMAGE=python:3.6-stretch
-      - EXTRA_REQUIREMENT=requirements-debian.txt
       - PYPI_REPO=stretch
     # Debian Stretch/cPython 3.7
     - env:
       - DOCKER_IMAGE=python:3.7-stretch
-      - EXTRA_REQUIREMENT=requirements-debian.txt
       - PYPI_REPO=stretch
-    # Alpine 3.9/cPython 2.7
-    - env:
-      - DOCKER_IMAGE=praekeltfoundation/alpine-python:2.7-alpine3.9
-      - EXTRA_REQUIREMENT=requirements-alpine.txt
-      - PYPI_REPO=alpine-3.9
-    # Alpine 3.9/cPython 3.6
-    - env:
-      - DOCKER_IMAGE=praekeltfoundation/alpine-python:3.6-alpine3.9
-      - EXTRA_REQUIREMENT=requirements-alpine.txt
-      - PYPI_REPO=alpine-3.9
-    # Alpine 3.9/cPython 3.7
-    - env:
-      - DOCKER_IMAGE=praekeltfoundation/alpine-python:3.7-alpine3.9
-      - EXTRA_REQUIREMENT=requirements-alpine.txt
-      - PYPI_REPO=alpine-3.9
 
 install:
   - docker pull $DOCKER_IMAGE
 before_script:
   - mkdir -p wheelhouse
-  - REQUIREMENT_OPTS="-r $(pwd)/$REQUIREMENT${EXTRA_REQUIREMENT:+ -r $(pwd)/$EXTRA_REQUIREMENT}"
 script:
-  - ./build.sh -d $DOCKER_IMAGE $REQUIREMENT_OPTS
+  - ./build.sh -d $DOCKER_IMAGE
 
 before_deploy:
   - pip install 'twine>=1.8.0'
