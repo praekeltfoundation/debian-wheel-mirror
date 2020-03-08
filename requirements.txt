@@ -11,5 +11,5 @@ regex==2020.2.20
 rjsmin==1.1.0
 subprocess32==3.5.2; python_version<'3'
 Twisted==19.10.0
-ujson==2.0.0
+ujson==2.0.1
 uWSGI==2.0.18
