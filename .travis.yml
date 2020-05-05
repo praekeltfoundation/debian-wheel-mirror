@@ -30,6 +30,26 @@ matrix:
     - env:
       - DOCKER_IMAGE=python:3.7-stretch
       - TWINE_REPOSITORY=stretch
+    # Debian Buster/cPython 2.7
+    - env:
+      - DOCKER_IMAGE=python:2.7-buster
+      - TWINE_REPOSITORY=buster
+    # Debian Buster/cPython 3.6
+    - env:
+      - DOCKER_IMAGE=python:3.6-buster
+      - TWINE_REPOSITORY=buster
+    # Debian Buster/cPython 3.7
+    - env:
+      - DOCKER_IMAGE=python:3.7-buster
+      - TWINE_REPOSITORY=buster
+    # Debian Buster/PyPy 2.7
+    - env:
+      - DOCKER_IMAGE=pypy:2.7-7.3.0-buster
+      - TWINE_REPOSITORY=buster
+    # Debian Buster/PyPy 3.6
+    - env:
+      - DOCKER_IMAGE=pypy:3.6-7.3.0-buster
+      - TWINE_REPOSITORY=buster
 
 install:
   - docker pull $DOCKER_IMAGE
