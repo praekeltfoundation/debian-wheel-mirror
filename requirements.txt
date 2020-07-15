@@ -1,5 +1,5 @@
 cairocffi==1.1.0; python_version>='3.5'
-hiredis==1.0.1
+hiredis==1.1.0
 mysqlclient==1.4.6
 psycopg2==2.8.5
 psycopg2cffi==2.8.1
