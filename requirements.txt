@@ -11,7 +11,7 @@ regex==2020.7.14
 rjsmin==1.1.0
 subprocess32==3.5.2; python_version<'3'
 Twisted==20.3.0
-ujson==2.0.3
+ujson==3.0.0
 uWSGI==2.0.19.1
 
 # These have pre-compiled manylinux packages on CPython but not on PyPy
