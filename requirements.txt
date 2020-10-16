@@ -14,5 +14,8 @@ Twisted==20.3.0
 ujson==2.0.3
 uWSGI==2.0.19.1
 
+# psutil doesn't work on some pypy versions: https://github.com/giampaolo/psutil/issues/1659
+psutil==5.7.2; platform_python_implementation=='CPython'
+
 # These have pre-compiled manylinux packages on CPython but not on PyPy
 cryptography==3.1.1; platform_python_implementation!='CPython'
