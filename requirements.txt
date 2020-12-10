@@ -1,6 +1,6 @@
 cairocffi==1.2.0; python_version>='3.5'
 hiredis==1.1.0
-mysqlclient==1.4.6
+mysqlclient==2.0.2
 psycopg2==2.8.6
 psycopg2cffi==2.8.1
 # https://github.com/snowballstem/pystemmer/issues/18
