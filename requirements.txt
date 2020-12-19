@@ -11,7 +11,7 @@ regex==2020.11.13
 rjsmin==1.1.0
 subprocess32==3.5.2; python_version<'3'
 Twisted==20.3.0
-ujson==2.0.3
+ujson==4.0.1
 uWSGI==2.0.19.1
 
 # psutil doesn't work on some pypy versions: https://github.com/giampaolo/psutil/issues/1659
