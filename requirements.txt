@@ -18,4 +18,4 @@ uWSGI==2.0.19.1
 psutil==5.8.0; platform_python_implementation=='CPython'
 
 # These have pre-compiled manylinux packages on CPython but not on PyPy
-cryptography==3.3.1; platform_python_implementation!='CPython'
+cryptography==3.4.1; platform_python_implementation!='CPython'
