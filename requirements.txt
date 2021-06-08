@@ -3,8 +3,6 @@ hiredis==1.1.0
 mysqlclient==1.4.6
 psycopg2==2.8.6
 psycopg2cffi==2.9.0
-# https://github.com/snowballstem/pystemmer/issues/18
-PyStemmer==1.3.0; platform_python_implementation=='CPython' and python_version<'3.7'
 python_axolotl_curve25519==0.4.1.post2
 rcssmin==1.0.6
 regex==2021.4.4
@@ -16,6 +14,3 @@ uWSGI==2.0.19.1
 
 # psutil doesn't work on some pypy versions: https://github.com/giampaolo/psutil/issues/1659
 psutil==5.8.0; platform_python_implementation=='CPython'
-
-# These have pre-compiled manylinux packages on CPython but not on PyPy
-cryptography==3.3.1; platform_python_implementation!='CPython'
