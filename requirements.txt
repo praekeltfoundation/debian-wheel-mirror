@@ -1,6 +1,6 @@
-cairocffi==1.2.0; python_version>='3.5'
-hiredis==1.1.0
-mysqlclient==1.4.6
+cairocffi==1.2.0; python_version>='3.6'
+hiredis==2.0.0; python_version>='3.6'
+mysqlclient==2.0.3; python_version>='3.6'
 psycopg2==2.8.6
 psycopg2cffi==2.9.0
 python_axolotl_curve25519==0.4.1.post2
@@ -8,8 +8,8 @@ rcssmin==1.0.6
 regex==2021.4.4
 rjsmin==1.1.0
 subprocess32==3.5.2; python_version<'3'
-Twisted==20.3.0
-ujson==2.0.3
+Twisted==21.2.0; python_version>='3.6'
+ujson==4.0.2; python_version>='3.6'
 uWSGI==2.0.19.1
 
 # psutil doesn't work on some pypy versions: https://github.com/giampaolo/psutil/issues/1659
