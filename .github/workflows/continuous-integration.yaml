@@ -47,7 +47,7 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: praekeltorg
-          password: ${{ secrets.TWINE_SECRET }}
+          password: ${{ secrets.TWINE_PASSWORD }}
           repository_url: https://${{ matrix.twine_repo }}.wheelhouse.praekelt.org
           packages_dir: wheelhouse/
           skip_existing: true
