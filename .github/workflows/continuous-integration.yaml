@@ -43,7 +43,7 @@ jobs:
           docker pull ${{ matrix.docker_image }}
           ./build.sh -d ${{ matrix.docker_image }}
       - name: Publish packages
-        if: ${{ success() && github.event_name == "push" && github.ref == "refs/heads/develop" }}
+        if: ${{ success() && github.event_name == 'push' && github.ref == 'refs/heads/develop' }}
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: praekeltorg
