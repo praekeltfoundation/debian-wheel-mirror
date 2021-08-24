@@ -1,6 +1,6 @@
 # debian-wheel-mirror
 
-[![Build Status](https://travis-ci.org/praekeltfoundation/debian-wheel-mirror.svg?branch=develop)](https://travis-ci.org/praekeltfoundation/debian-wheel-mirror)
+[![Build Status](https://github.com/praekeltfoundation/debian-wheel-mirror/actions/workflows/continuous-integration.yaml/badge.svg)](https://github.com/praekeltfoundation/debian-wheel-mirror/actions)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&identifier=58206043)](https://dependabot.com)
 
 Automated Python wheel building and deployment for Praekelt's PyPI mirrors.
