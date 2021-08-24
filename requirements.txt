@@ -2,7 +2,7 @@ cairocffi==1.2.0; python_version>='3.6'
 hiredis==2.0.0; python_version>='3.6'
 mysqlclient==2.0.3; python_version>='3.6'
 # Issue with pypy3.7 https://foss.heptapod.net/pypy/pypy/-/issues/3320
-psycopg2==2.9.1; python_version>='3.6'; platform_python_implementation='CPython'
+psycopg2==2.9.1; python_version>='3.6' and platform_python_implementation='CPython'
 psycopg2cffi==2.9.0
 python_axolotl_curve25519==0.4.1.post2
 rcssmin==1.0.6
