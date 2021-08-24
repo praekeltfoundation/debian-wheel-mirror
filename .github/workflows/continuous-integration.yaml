@@ -31,13 +31,13 @@ jobs:
           - docker_image: python:3.7-buster
             twine_repo: buster
           # CPython/bullseye
-          - docker_image: python:3.6-buster
+          - docker_image: python:3.6-bullseye
             twine_repo: bullseye
-          - docker_image: python:3.7-buster
+          - docker_image: python:3.7-bullseye
             twine_repo: bullseye
-          - docker_image: python:3.8-buster
+          - docker_image: python:3.8-bullseye
             twine_repo: bullseye
-          - docker_image: python:3.9-buster
+          - docker_image: python:3.9-bullseye
             twine_repo: bullseye
           # PyPy/buster
           - docker_image: pypy:2.7-7.3.5-buster
@@ -45,7 +45,7 @@ jobs:
           - docker_image: pypy:3.6-7.3.3-buster
             twine_repo: buster
           # PyPy/bullseye
-          - docker_image: pypy:3.7-7.3.5-buster
+          - docker_image: pypy:3.7-7.3.5-bullseye
             twine_repo: bullseye
     steps:
       - uses: actions/checkout@v2
