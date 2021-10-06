@@ -1,6 +1,9 @@
 name: shared-ci
 on:
-  workflow_call
+  workflow_call:
+    secrets:
+      TWINE_PASSWORD:
+        required: false
 
 jobs:
   build-wheels:

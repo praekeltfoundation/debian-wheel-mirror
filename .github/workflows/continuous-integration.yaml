@@ -11,4 +11,6 @@ on:
 
 jobs:
   ci:
-    uses: praekeltfoundation/debian-wheel-mirror/.github/workflows/shared.yaml@shared-workflow
+    uses: praekeltfoundation/debian-wheel-mirror/.github/workflows/shared.yaml@develop
+    secrets:
+      TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
