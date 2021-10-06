@@ -1,0 +1,12 @@
+name: post-merge
+
+on:
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - 'Merge me!'
+
+jobs:
+  ci:
+    uses: praekeltfoundation/debian-wheel-mirror/.github/workflows/shared.yaml@develop
