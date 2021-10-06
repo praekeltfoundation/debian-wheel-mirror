@@ -56,11 +56,7 @@ jobs:
           docker pull ${{ matrix.docker_image }}
           ./build.sh -d ${{ matrix.docker_image }}
       - name: Publish packages
-        # The automerge commit doesn't trigger new workflow runs, so we need to
-        # publish from inside the PRs. Let's hope this doesn't break
-        # everything.
-        if: ${{ success() }}
-        # if: ${{ success() && github.event_name == 'push' && github.ref == 'refs/heads/develop' }}
+        if: ${{ success() && github.event_name == 'push' && github.ref == 'refs/heads/develop' }}
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: praekeltorg
