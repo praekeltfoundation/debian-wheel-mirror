@@ -1,5 +1,4 @@
-cairocffi==1.2.0; python_version>='3.6'
-hiredis==2.0.0; python_version>='3.6'
+cairocffi==1.2.0; python_version>='3.7'
 mysqlclient==2.0.3; python_version>='3.6'
 # Issue with pypy3.7 https://foss.heptapod.net/pypy/pypy/-/issues/3320
 psycopg2==2.9.1; python_version>='3.6' and platform_python_implementation=='CPython'
@@ -9,10 +8,6 @@ rcssmin==1.0.6
 regex==2021.9.30
 rjsmin==1.1.0
 subprocess32==3.5.2; python_version<'3'
-Twisted==21.7.0; python_version>='3.6'
 ujson==4.2.0; python_version>='3.6'
 uWSGI==2.0.19.1
 zbar-py==1.0.4; python_version>='3.6'
-
-# psutil doesn't work on some pypy versions: https://github.com/giampaolo/psutil/issues/1659
-psutil==5.8.0; platform_python_implementation=='CPython'
