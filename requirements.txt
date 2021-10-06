@@ -9,5 +9,5 @@ regex==2021.9.30
 rjsmin==1.1.0
 subprocess32==3.5.2; python_version<'3'
 ujson==4.2.0; python_version>='3.6'
-uWSGI==2.0.19.1
+uWSGI==2.0.20
 zbar-py==1.0.4; python_version>='3.6'
