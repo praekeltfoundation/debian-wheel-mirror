@@ -11,4 +11,4 @@ on:
 
 jobs:
   ci:
-    uses: praekeltfoundation/debian-wheel-mirror/.github/workflows/shared.yaml@${{ github.sha }}
+    uses: praekeltfoundation/debian-wheel-mirror/.github/workflows/shared.yaml@shared-workflow
