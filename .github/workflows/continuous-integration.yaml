@@ -3,14 +3,64 @@ on:
   push:
     branches:
       - develop
-      - master
   pull_request:
     branches:
       - develop
-      - master
 
 jobs:
-  ci:
-    uses: praekeltfoundation/debian-wheel-mirror/.github/workflows/shared.yaml@develop
-    secrets:
-      TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+  build-wheels:
+    name: build wheels
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false  # So we can see which things fail
+      matrix:
+        include:
+          # CPython/stretch
+          - docker_image: python:2.7-stretch
+            twine_repo: stretch
+          - docker_image: python:3.6-stretch
+            twine_repo: stretch
+          - docker_image: python:3.7-stretch
+            twine_repo: stretch
+          # CPython/buster
+          - docker_image: python:2.7-buster
+            twine_repo: buster
+          - docker_image: python:3.6-buster
+            twine_repo: buster
+          - docker_image: python:3.7-buster
+            twine_repo: buster
+          # CPython/bullseye
+          - docker_image: python:3.6-bullseye
+            twine_repo: bullseye
+          - docker_image: python:3.7-bullseye
+            twine_repo: bullseye
+          - docker_image: python:3.8-bullseye
+            twine_repo: bullseye
+          - docker_image: python:3.9-bullseye
+            twine_repo: bullseye
+          # PyPy/buster
+          - docker_image: pypy:2.7-7.3.5-buster
+            twine_repo: buster
+          - docker_image: pypy:3.6-7.3.3-buster
+            twine_repo: buster
+          # PyPy/bullseye
+          - docker_image: pypy:3.7-7.3.5-bullseye
+            twine_repo: bullseye
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build packages
+        run: |
+          mkdir -p wheelhouse
+          docker pull ${{ matrix.docker_image }}
+          ./build.sh -d ${{ matrix.docker_image }}
+      - name: Publish packages
+        if: ${{ success() && github.event_name == 'push' && github.ref == 'refs/heads/develop' }}
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: praekeltorg
+          password: ${{ secrets.TWINE_PASSWORD }}
+          repository_url: https://${{ matrix.twine_repo }}.wheelhouse.praekelt.org
+          packages_dir: wheelhouse/
+          verify_metadata: false
+          skip_existing: true
+          verbose: true
