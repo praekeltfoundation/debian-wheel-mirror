@@ -42,8 +42,10 @@ for requirement in "${REQUIREMENTS[@]}"; do
   REQUIREMENT_OPTS+=("-r" "/$requirement_file")
 done
 
+# Set CPUCOUNT=1 in an attempt to avoid random uWSGI build errors on bullseye.
 docker run --rm \
   "${REQUIREMENT_VOLUMES[@]}" \
   -v "$WHEEL_DIR":/wheelhouse \
+  -e "CPUCOUNT=1" \
   $DOCKER_IMAGE \
   pip wheel "${REQUIREMENT_OPTS[@]}" -w /wheelhouse -f /wheelhouse $NO_DEPS
