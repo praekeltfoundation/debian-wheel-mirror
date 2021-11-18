@@ -1,5 +1,5 @@
 cairocffi==1.3.0; python_version>='3.7'
-mysqlclient==2.0.3; python_version>='3.6'
+mysqlclient==2.1.0; python_version>='3.6'
 # Issue with pypy3.7 https://foss.heptapod.net/pypy/pypy/-/issues/3320
 psycopg2==2.9.2; python_version>='3.6' and platform_python_implementation=='CPython'
 psycopg2cffi==2.9.0
