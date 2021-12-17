@@ -8,6 +8,6 @@ rcssmin==1.1.0
 regex==2021.11.10
 rjsmin==1.2.0
 subprocess32==3.5.2; python_version<'3'
-ujson==4.3.0; python_version>='3.6'
+ujson==5.0.0; python_version>='3.6'
 uWSGI==2.0.20
 zbar-py==1.0.4; python_version>='3.6'
