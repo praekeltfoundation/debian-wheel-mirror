@@ -4,7 +4,7 @@ mysqlclient==2.1.1; python_version>='3.6'
 psycopg2==2.9.8; python_version>='3.6' and platform_python_implementation=='CPython'
 psycopg2cffi==2.9.0
 python_axolotl_curve25519==0.4.1.post2
-rcssmin==1.1.1
+rcssmin==1.1.2
 regex==2022.10.31; python_version>='3.6'
 rjsmin==1.2.1
 subprocess32==3.5.2; python_version<'3'
