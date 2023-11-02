@@ -5,7 +5,7 @@ psycopg2==2.9.8; python_version>='3.6' and platform_python_implementation=='CPyt
 psycopg2cffi==2.9.0
 python_axolotl_curve25519==0.4.1.post2
 rcssmin==1.1.2
-regex==2022.10.31; python_version>='3.6'
+regex==2023.10.3; python_version>='3.6'
 rjsmin==1.2.2
 subprocess32==3.5.2; python_version<'3'
 ujson==5.7.0; python_version>='3.7'
